@@ -1,0 +1,21 @@
+python train.py -m Tacotron2 -o ./output/ -lr 1e-3 --epochs 1 -bs 16 --weight-decay 1e-6 --grad-clip-thresh 1.0 --cudnn-enabled --log-file nvlog.json --load-mel-from-disk --training-files=filelists/korean_val.txt --validation-files=filelists/korean_train.txt --text-cleaners=transliteration_cleaners --dataset-path 
+
+
+
+
+scp -r solugate@192.168.0.246:/home/solugate/Desktop/DeepLearningExamples/PyTorch/SpeechSynthesis/Tacotron2/kss-master/logdir/4-1 /Users/bagjun-yeong/Downloads
+
+scp solugate@192.168.0.246:/home/solugate/Desktop/DeepLearningExamples/PyTorch/SpeechSynthesis/Tacotron2/kss-master/logdir/2-1/events.out.tfevents.1612315775.4c8d7f9a4f18 /Users/bagjun-yeong/Downloads
+
+
+nvidia-docker run --shm-size=8g --name=3cs --ulimit memlock=-1 --ulimit stack=67108864 -it --ipc=host -v $PWD:/workspace/tacotron2/ tacotron2 bash
+
+
+텐서플로 컨테이너 실행
+docker run --gpus all -it -v $PWD:/workspace/tacotron2 nvcr.io/nvidia/tensorflow:20.12-tf1-py3
+
+
+scp /Users/bagjun-yeong/downloads/exp4.zip solugate@192.168.0.246:/home/solugate/Desktop/DeepLearningExamples/PyTorch/SpeechSynthesis/Tacotron2/kss-master/logdir
+
+
+scp /Users/bagjun-yeong/downloads/datadistributedparallel.py solugate@192.168.0.246:/home/solugate/Desktop/DeepLearningExamples/PyTorch/SpeechSynthesis/Tacotron2
