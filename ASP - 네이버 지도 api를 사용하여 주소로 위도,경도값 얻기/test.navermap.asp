@@ -88,7 +88,7 @@
 
 
     For p = 0 To count Step 1
-        sql = "UPDATE T_AEST SET Latitude=? ,Longitude=? WHERE Addr = ? "
+        sql = "UPDATE TABLE SET Latitude=? ,Longitude=? WHERE Addr = ? "
         arrParams = Array(_
             Db.makeParam("@Latitude", adDouble, adParamInput, 8, latitude), _
             Db.makeParam("@Hardness", adDouble, adParamInput, 8, longitude), _
