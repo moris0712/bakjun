@@ -39,7 +39,7 @@
 	<input type="hidden" name="count" value="<%=UBound(arrget,2)%>" />
 </form>	
 
-<!--<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=( 네이버api 클라이언트 아이디 )&submodules=geocoder"></script>-->
+<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=( 네이버api 클라이언트 아이디 )&submodules=geocoder"></script>
 
 <script type="text/javascript">
 	var aaa = [];
