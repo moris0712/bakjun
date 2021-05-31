@@ -22,7 +22,7 @@
 	sql = sql & "sin( radians( Latitude ) ) ) ) AS dist FROM TABLE) myResult "
 	sql = sql & "WHERE myResult.dist <= 500 ORDER BY myResult.dist ASC"
 
-	'이 질의문은 latitude longitude 기준으로 Member에 있는 튜플들을 가까운 거리(dist)순으로 출력해준다.'
+	'이 질의문은 latitude longitude 기준으로 TABLE에 있는 튜플들을 가까운 거리(dist)순으로 출력해준다.'
 	'여기서 숫자 6371은 dist를 km단위로 표시하기위함이고 만약 3959를 사용한다면 dist가 마일 단위로 출력이된다고한다.'
 	'그리고 dist<=500은 해당 latitude longtitude 기준으로 반경 500km내에 있는것만 검색한다는 뜻이다.'
 
