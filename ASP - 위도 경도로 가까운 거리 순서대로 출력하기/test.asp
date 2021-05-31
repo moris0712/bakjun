@@ -1,6 +1,6 @@
 <%
 
-	sql = "SELECT Latitude, Longitude FROM T_PARTNER WHERE UserNo=? " 
+	sql = "SELECT Latitude, Longitude FROM TABLE WHERE UserNo=? " 
 	arrParams = Array( _
 		Db.makeParam("@UserNo", adInteger, adParamInput, 4, idx) _
 	)
@@ -19,7 +19,7 @@
 	sql = sql & "FROM ( "
 	sql = sql & "SELECT Name, Addr, Latitude, Longitude, ( 6371 * acos( cos( radians("&latitude&") ) * cos( radians( Latitude ) ) * "
 	sql = sql & "cos( radians( Longitude ) - radians("&longitude&") ) + sin( radians("&latitude&") ) * "
-	sql = sql & "sin( radians( Latitude ) ) ) ) AS dist FROM Member) myResult "
+	sql = sql & "sin( radians( Latitude ) ) ) ) AS dist FROM TABLE) myResult "
 	sql = sql & "WHERE myResult.dist <= 500 ORDER BY myResult.dist ASC"
 
 	'이 질의문은 latitude longitude 기준으로 Member에 있는 튜플들을 가까운 거리(dist)순으로 출력해준다.'
