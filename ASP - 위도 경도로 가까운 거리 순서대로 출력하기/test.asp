@@ -1,5 +1,4 @@
 <%
-
 	sql = "SELECT Latitude, Longitude FROM TABLE WHERE UserNo=? " 
 	arrParams = Array( _
 		Db.makeParam("@UserNo", adInteger, adParamInput, 4, idx) _
@@ -28,7 +27,6 @@
 
 
 	Set distance = Db.execRs(sql, DB_CMDTYPE_TEXT, arrParams, Nothing)
-
 %>
 
 
