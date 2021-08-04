@@ -19,7 +19,7 @@ public class Main {
         }        
 
         int past = -1; // 다음 depth로 갈때는 과거값 초기화
-        for(int i=0; i<N; i++){
+        for(int i=my_pos; i<N; i++){
             print_arr[depth] = arr[i];
             if(!visited[i] && past!=arr[i]){
                 visited[i] = true;
