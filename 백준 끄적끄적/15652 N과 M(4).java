@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ddd {
+public class Main {
 
     public static int[] arr;
     public static int N, M;
