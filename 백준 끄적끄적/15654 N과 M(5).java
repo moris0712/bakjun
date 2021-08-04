@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class ccc {
+public class Main {
 
     static int arr [];
     static int N;
